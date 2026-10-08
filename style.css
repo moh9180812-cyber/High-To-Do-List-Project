@@ -1,0 +1,6 @@
+.class {
+    max-width: 70%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -48,7 +48,7 @@ addBtn.onclick = function () {
   task.style = "padding: 10px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; background-color: white";
 
   let taskText = document.createElement("span");
-  taskText.className = "class";
+  taskText.style = "max-width: 70%;overflow: hidden;display: flex;flex-wrap: wrap;"
 
   let delBtn = document.createElement("button");
   delBtn.innerHTML = "Delete";

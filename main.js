@@ -1,10 +1,14 @@
 // style of body .
-document.body.style = "display: flex; justify-content: center; flex-direction: column; width: 100%";
+document.body.style = "display: flex; align-items: center; flex-direction: column; width: 100%; height: 100vh; margin:0;";
+
+// container
+let container = document.createElement("div");
+container.style = "width: 100%;height: 100vh;display: flex;align-items: center;flex-direction: column;margin: 0 30px;max-width: 95%;";
 
 // create form container and style it .
 let form = document.createElement("div");
 form.className = "form";
-form.style = "background-color: #ddd; width: 500px;margin-left: 50%; transform: translateX(-50%); margin-top: 20px; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; gap: 20px";
+form.style = "background-color: rgb(221, 221, 221);width: 500px;margin: 20px 30px 0px;padding: 20px;border-radius: 10px;display: flex;justify-content: space-between;gap: 20px;max-width: 90%;margin: 20px 20px 0;";
 
 // create input and style it .
 let taskInp = document.createElement("input");
@@ -21,13 +25,14 @@ form.append(taskInp);
 form.append(addBtn);
 
 // append form in body .
-document.body.append(form);
+container.append(form);
+document.body.append(container);
 
 
 
 
 let boxTasks = document.createElement("div");
-  boxTasks.style = "background-color: #ddd; width: 500px;margin-left: 50%; transform: translateX(-50%); margin-top: 20px; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; flex-direction: column; gap: 10px";
+  boxTasks.style = "background-color: rgb(221, 221, 221);width: 500px;margin: 20px 30px 0px;padding: 20px;border-radius: 10px;display: flex;justify-content: space-between;flex-direction: column;gap: 10px;max-width: 90%;margin: 20px;";
 
 
  let arrValue = window.localStorage.tasks
@@ -73,7 +78,8 @@ addBtn.onclick = function () {
   }
 
   taskInp.value = "";
-  document.body.append(boxTasks);
+  container.append(boxTasks);
+  document.body.append(container);
   
 }
 
@@ -109,5 +115,6 @@ for (let i = 0; i < arrValue.length; i++) {
 
         window.localStorage.setItem("tasks", arrValue);
     };
-    document.body.append(boxTasks);
+    container.append(boxTasks);
+    document.body.append(container);
 }
